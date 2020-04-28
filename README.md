@@ -10,7 +10,9 @@ application up and running.
 
 ## ER Diagram for the basic Models
 ![image](/app/assets/images/GroupOurTransactionsCAPstonePRJ.png)
-
+<!-- [link to file for edition](https://app.diagrams.net/#W388c734d24bdc20a%2F388C734D24BDC20A!523) -->
+--
+---
 
 Things you may want to cover:
 
