@@ -1,2 +1,4 @@
-<h1>Users#login</h1>
-<p>Find me in app/views/users/login.html.erb</p>
+<% provide(:title, 'Login') %>
+<% provide(:who, @user) %>
+
+<%= render  "shared/form" %>
