@@ -1,15 +1,16 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root 'users#login'
-  resources :users, only: [:new, :create, :show]
+  get '/signup', to: 'users#new'
+  resources :users, only: [:create, :show]
   resources :groups, only: [:index, :show, :new, :create]
   resources :transactions, only: [:index, :show, :new, :create], as: 'trns'
 end
 
 # ROUTES:
 #      root GET     /                               users#login
+#    signup GET     /signup(.:format)               users#new
 #     users POST    /users(.:format)                users#create
-#  new_user GET     /users/new(.:format)            users#new
 #      user GET     /users/:id(.:format)            users#show
 #    groups GET     /groups(.:format)               groups#index
 #           POST    /groups(.:format)               groups#create
