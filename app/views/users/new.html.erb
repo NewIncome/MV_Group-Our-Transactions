@@ -1,6 +1,6 @@
 <% provide(:title, 'Signup') %>
 
-<%= form_for @user do |f| %>
+<%= form_for @user, html: { class: "mt-5" } do |f| %>
 
   <%= render  'shared/form_errors' %>
 
