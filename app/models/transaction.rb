@@ -5,4 +5,5 @@ class Transaction < ApplicationRecord
   validates :amount, presence: true
   validates :user_id, presence: true
 
+  belongs_to :user_id
 end

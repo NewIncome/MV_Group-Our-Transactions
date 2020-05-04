@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   delete '/logout', to: 'users#destroy'
   resources :users, only: [:create, :show]
   resources :groups, only: [:index, :show, :new, :create]
-  resources :transactions, only: [:index, :show, :new, :create], as: 'trns'
+  resources :transactions, only: [:index, :show, :new, :create]
   root 'static_pages#home'
 end
 
