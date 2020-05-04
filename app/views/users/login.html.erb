@@ -1,5 +1,5 @@
 <% provide(:title, 'Login') %>
-<div class="d-flex flex-column h-100 justify-content-between mt-5">
+<div class="d-flex flex-column h-75 justify-content-between mt-5">
   <%= form_with scope: :session, url: login_path, html: { class: "" } do |f| %>
 
     <%= f.text_field :name, class: "form-control", placeholder: "Name" %>
