@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  root 'users#login'
-  get '/signup', to: 'users#new'
-  resources :users, only: [:create, :show]
+  get '/login', to: 'users#login'
+  post '/login', to: 'users#logincreate'
+  delete '/logout', to: 'users#destroy'
+  resources :users, only: [:new, :create, :show]
   resources :groups, only: [:index, :show, :new, :create]
   resources :transactions, only: [:index, :show, :new, :create], as: 'trns'
+  root 'users#login'
 end
 
 # ROUTES:

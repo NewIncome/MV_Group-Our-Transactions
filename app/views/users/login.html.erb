@@ -1,3 +1,8 @@
 <% provide(:title, 'Login') %>
 
-<%= render  "shared/form", :who => @user %>
+<%= form_with scope: :session, url: login_path do |f| %>
+  <%= f.label :name, 'Name' %>
+  <%= f.text_field :name, class: "form-control" %>
+
+  <%= f.submit class: "btn btn-primary my-4 mx-auto d-block" %>
+<% end %>
