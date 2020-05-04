@@ -11,11 +11,18 @@
 
   <body>
     <div class="container" id="main_container">
+      <%# to not show the navbar in the home page %>
       <% if yield(:title) != 'Home' %>
         <%= render  "layouts/header" %>
       <% end %>
-      
+   
       <%= yield %>
+
+      <% flash.each do |m_type, msg| %>
+        <div class="alert alert-<%= m_type %> w-75 mx-auto">
+          <%= msg %>
+        </div>
+      <% end %>
 
       <%#= debug(params) if Rails.env.development? %>
       

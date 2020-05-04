@@ -10,7 +10,6 @@ class UsersController < ApplicationController
       flash[:success] = 'Account created successfully!'
       redirect_to @user
     else
-      flash.now[:danger] = "User name already exist or doesn't meet the requirements"
       render 'new'
     end
   end
