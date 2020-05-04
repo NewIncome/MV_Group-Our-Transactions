@@ -19,7 +19,7 @@
       <%= yield %>
 
       <% flash.each do |m_type, msg| %>
-        <div class="alert alert-<%= m_type %> w-75 mx-auto">
+        <div class="alert alert-<%= m_type %> w-75 mx-auto text-center">
           <%= msg %>
         </div>
       <% end %>
@@ -27,5 +27,8 @@
       <%#= debug(params) if Rails.env.development? %>
       
     </div>
+    <% unless current_user.nil? %>
+      <%= link_to  "Logout", logout_url, method: :delete, class: "btn btn-warning" %>
+    <% end %>
   </body>
 </html>

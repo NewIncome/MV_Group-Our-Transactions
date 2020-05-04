@@ -21,8 +21,9 @@ class UsersController < ApplicationController
   def login; end
 
   def logincreate
-    @user = User.find_by(name: params[:name])
-    if @user
+    @user = User.find_by(name: params[:session][:name])
+    flash[:warning] = "#{@user.name}, #{@user.id}, #{@user.nil?}"
+    unless @user.nil?
       session[:user_id] = @user.id
       flash[:success] = "#{@user.name} you are logged in!"
       redirect_to @user
@@ -34,6 +35,7 @@ class UsersController < ApplicationController
 
   def logout
     session.delete(:user_id)
+    redirect_to root_path
   end
 
   private
