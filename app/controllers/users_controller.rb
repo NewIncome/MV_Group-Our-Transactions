@@ -22,7 +22,6 @@ class UsersController < ApplicationController
 
   def logincreate
     @user = User.find_by(name: params[:session][:name])
-    flash[:warning] = "#{@user.name}, #{@user.id}, #{@user.nil?}"
     unless @user.nil?
       session[:user_id] = @user.id
       flash[:success] = "#{@user.name} you are logged in!"
