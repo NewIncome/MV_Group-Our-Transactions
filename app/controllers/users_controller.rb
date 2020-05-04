@@ -18,10 +18,10 @@ class UsersController < ApplicationController
     if @user
       session[:user_id] = @user.id
       flash[:success] = "#{@user.name} you are logged in!"
-      redirect_to html: 'Logged in' # @user
+      redirect_to @user
     else
       flash.now[:danger] = "Please sign up first"
-      render html: "User doesn't exist"
+      render 'login'
     end
   end
 

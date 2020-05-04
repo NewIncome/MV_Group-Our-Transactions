@@ -1,2 +1,23 @@
-<h1>Transactions#new</h1>
-<p>Find me in app/views/transactions/new.html.erb</p>
+<% provide(:title, 'New Transaction') %>
+
+<%= form_for @trn, url: new_trn_path do |f| %>
+
+  <%= render  'shared/form_errors' %>
+
+  <%= f.label :name, 'Name' %>
+  <%= f.text_field :name, class: "form-control" %>
+
+  <%= f.label :description, 'Description' %>
+  <%= f.text_area :description, class: "form-control" %>
+
+  <%= f.label :amount %>
+  <%= f.number_field :amount, in: 0..20, class: "form-control" %>
+
+  <%#= f.label :user_id, "Creator" %>
+  <%#= f.number_field(:user_id, value: 1 %>
+
+  <%#= f.label :group_id, "Group name" %>
+  <%#= f.number_field (:id_name, in: ${1.0..20.0}, step: ${0.5}) %>
+
+  <%= f.submit class: "btn btn-primary my-4 mx-auto d-block" %>
+<% end %>
