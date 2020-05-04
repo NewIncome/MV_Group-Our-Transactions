@@ -5,6 +5,14 @@ class UsersController < ApplicationController
   end
 
   def create
+    @user = User.new(user_params)
+    if @user.save
+      flash[:success] = 'Account created successfully!'
+      redirect_to @user
+    else
+      flash.now[:danger] = "User name already exist or doesn't meet the requirements"
+      render 'new'
+    end
   end
 
   def show
@@ -20,12 +28,18 @@ class UsersController < ApplicationController
       flash[:success] = "#{@user.name} you are logged in!"
       redirect_to @user
     else
-      flash.now[:danger] = "Please sign up first"
+      flash.now[:danger] = "User doesn't exist, please sign up"
       render 'login'
     end
   end
 
   def logout
     session.delete(:user_id)
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:name)
   end
 end
