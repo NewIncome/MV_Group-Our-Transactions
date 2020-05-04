@@ -8,8 +8,9 @@
 
   <%= f.number_field :amount, in: 0..20, class: "form-control", placeholder: "Amount" %>
 
-  <%= f.select :group_id, Group.all.collect { |group| [group.name, group.id] } %>
-
+  <%#= f.select :group_id, Group.all.collect { |group| [group.name, group.id] } %>
+  <%= collection_select(:transaction, :group_id, Group.all, :id, :name, { :prompt => 'Group' }, class: "form-control my-3" ) %>
+ 
   <%= f.submit class: "btn btn-primary my-4 mx-auto d-block" %>
 
   <%= render  partial: 'shared/form_errors', locals: { model: @transaction } %>
