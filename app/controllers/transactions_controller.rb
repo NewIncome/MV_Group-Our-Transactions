@@ -3,6 +3,8 @@ class TransactionsController < ApplicationController
 
   def new
     @transaction = Transaction.new
+    @groups = Group.all.collect { |group| [group.name, group.id] }
+    flash[:warning] = "This is in the @groups: #{@groups}"
   end
 
   def create

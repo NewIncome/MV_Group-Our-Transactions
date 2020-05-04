@@ -6,14 +6,9 @@
 
   <%= f.text_area :description, class: "form-control my-3", placeholder: "Description" %>
 
-  <%= f.number_field :amount, in: 0..20, class: "form-control", placeholder: "Name" %>
+  <%= f.number_field :amount, in: 0..20, class: "form-control", placeholder: "Amount" %>
 
-  <%#= f.label :user_id, "Creator" %>
-  <%#= f.number_field(:user_id, value: 1 %>
-
-  <%#= f.label :group_id, "Group name" %>
-  <%#= f.number_field (:id_name, in: ${1.0..20.0}, step: ${0.5}) %>
-  <%# f.select %>
+  <%= f.select :group_id, Group.all.collect { |group| [group.name, group.id] } %>
 
   <%= f.submit class: "btn btn-primary my-4 mx-auto d-block" %>
 
