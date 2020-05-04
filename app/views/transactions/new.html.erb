@@ -4,14 +4,11 @@
 
   <%= render  'shared/form_errors' %>
 
-  <%= f.label :name, 'Name' %>
-  <%= f.text_field :name, class: "form-control" %>
+  <%= f.text_field :name, class: "form-control", placeholder: "Name" %>
 
-  <%= f.label :description, 'Description' %>
-  <%= f.text_area :description, class: "form-control" %>
+  <%= f.text_area :description, class: "form-control my-3", placeholder: "Description" %>
 
-  <%= f.label :amount %>
-  <%= f.number_field :amount, in: 0..20, class: "form-control" %>
+  <%= f.number_field :amount, in: 0..20, class: "form-control", placeholder: "Name" %>
 
   <%#= f.label :user_id, "Creator" %>
   <%#= f.number_field(:user_id, value: 1 %>

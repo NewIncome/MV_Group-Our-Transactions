@@ -4,9 +4,8 @@
 
   <%= render  'shared/form_errors' %>
 
-  <%= f.label :name, 'Name' %>
-  <%= f.text_field :name, class: "form-control" %>
+  <%= f.text_field :name, class: "form-control", placeholder: "Name" %>
 
   <%= f.submit 'Log in', class: "btn btn-primary my-4 mx-auto d-block" %>
-  <p>New user? <%= link_to  'Sign up now!', signup_path %></p>
+  <p class="">New user? <%= link_to  'Sign up now!', signup_path %></p>
 <% end %>

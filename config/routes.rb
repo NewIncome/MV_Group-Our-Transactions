@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :users, only: [:create, :show]
   resources :groups, only: [:index, :show, :new, :create]
   resources :transactions, only: [:index, :show, :new, :create], as: 'trns'
-  root 'users#login'
+  root 'static_pages#home'
 end
 
 # ROUTES:
