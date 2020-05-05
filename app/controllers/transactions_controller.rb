@@ -20,6 +20,11 @@ class TransactionsController < ApplicationController
   end
 
   def index
+    @transactions = Transaction.all
+  end
+
+  def no_grp
+    @transactions = Transaction.where(:group_id, nil)
   end
 
   private

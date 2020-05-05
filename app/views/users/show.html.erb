@@ -1,2 +1,15 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<% provide(:title, 'Profile') %>
+
+<div class="profile-container container">
+  <div class="card">
+    <img src="" alt="" class="card-img-top">
+    <h5 class="card-title"><%= current_user.name %></h5>
+  </div>
+
+  <ul class="list-group list-flush">
+    <li class="list-group-item"><%= link_to 'All my transactions', transactions_path %></li>
+    <li class="list-group-item"><%= link_to 'All my external transactions', transactions_no_grp_path %></li>
+    <li class="list-group-item"><%= link_to 'All groups', groups_path %></li>
+    <li class="list-group-item"><%= link_to  "Logout", logout_url, method: :delete %></li>
+  </ul>
+</div>
