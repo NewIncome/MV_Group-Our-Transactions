@@ -4,10 +4,10 @@ Rails.application.routes.draw do
   get '/login', to: 'users#login'
   post '/login', to: 'users#logincreate'
   delete '/logout', to: 'users#logout'
+  get '/transactions/no-grp', to: 'transactions#no_grp'
   resources :users, only: [:create, :show]
   resources :groups, only: [:index, :show, :new, :create]
   resources :transactions, only: [:index, :show, :new, :create]
-  get '/transactions/no-grp', to: 'transactions#no_grp'
   root 'static_pages#home'
 end
 

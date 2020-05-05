@@ -24,7 +24,7 @@ class TransactionsController < ApplicationController
   end
 
   def no_grp
-    @transactions = Transaction.where(:group_id, nil)
+    @transactions = Transaction.where(:group_id => nil)
   end
 
   private
