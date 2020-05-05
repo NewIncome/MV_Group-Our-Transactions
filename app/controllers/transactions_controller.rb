@@ -1,5 +1,5 @@
 class TransactionsController < ApplicationController
-  before_action :logged_in?, only: %i[new create show index]
+  before_action :logged_in_user, only: %i[new create show index]
 
   def new
     @transaction = Transaction.new
