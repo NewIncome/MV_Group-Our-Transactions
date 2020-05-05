@@ -1,2 +1,14 @@
-<h1>Groups#show</h1>
-<p>Find me in app/views/groups/show.html.erb</p>
+<ul class="card mx-3 list-group list-group-flush p-3">
+  <li class="list-group-item p-0">
+    <h4 class="mt-2 mb-4"><%= @group.name %></h4>
+  </li>
+
+  <li class="list-group-item p-0 pt-3">
+    <%= render @transactions %>
+  </li>
+
+  <li class="list-group-item d-flex justify-content-between p-0 pt-3">
+    <p class="m-0">TOTAL AMOUNT</p>
+    <span class="font-weight-bold">$<%= number_with_precision(@transactions.sum(:amount), :precision => 2) %></span>
+  </li>
+</ul>

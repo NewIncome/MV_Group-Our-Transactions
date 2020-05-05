@@ -14,10 +14,13 @@ class GroupsController < ApplicationController
     end
   end
 
-  def show
+  def index
+    @groups = Group.all
   end
 
-  def index
+  def show
+    @group = Group.find_by(id: params[:id])
+    @transactions = @group.transactions
   end
 
   private
