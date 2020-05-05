@@ -17,6 +17,7 @@ class TransactionsController < ApplicationController
   end
 
   def show
+    @transaction = Transaction.find_by(id: params[:id])
   end
 
   def index

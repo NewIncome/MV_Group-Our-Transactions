@@ -1,2 +1,16 @@
-<h1>Transactions#show</h1>
-<p>Find me in app/views/transactions/show.html.erb</p>
+<ul class="card mx-3 list-group list-group-flush p-3">
+  <li class="list-group-item p-0">
+    <h5 class="mt-2 mb-4"><%= @transaction.name %></h5>
+    <p class="text-muted"><%= @transaction.description %></p>
+  </li>
+
+  <li class="list-group-item p-0 pt-3">
+    <p class="">Transaction no.<%= @transaction.id %></p>
+    <p class="card-text pb-3"><small class="text-muted"><%= @transaction.created_at.strftime('%d %b %Y at %l:%M%P') %></small></p>
+  </li>
+
+  <li class="list-group-item d-flex justify-content-between p-0 pt-3">
+    <p class="m-0">AMOUNT</p>
+    <span class="font-weight-bold">$<%= number_with_precision(@transaction.amount, :precision => 2) %></span>
+  </li>
+</ul>
