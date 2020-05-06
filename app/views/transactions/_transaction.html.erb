@@ -1,6 +1,9 @@
 <div class="card mb-3 mx-3">
   <div class="d-flex p-3 justify-content-between">
     <h5 class="text-muted m-0"><%= link_to "#{transaction.name}", transaction_url(transaction.id), class: "text-decoration-none" %></h5>
+    <% if controller_name == 'groups' && action_name == 'show' %>
+      <p class="font-weight-bold m-0"><%= transaction.user.name %></p>
+    <% end %>
     <p class="font-weight-bold m-0">$<%= number_with_precision(transaction.amount, :precision => 2) %></p>
   </div>
   <p class="card-text pl-3 pb-3"><small class="text-muted"><%= transaction.created_at.strftime('%d %b %Y') %></small></p>
