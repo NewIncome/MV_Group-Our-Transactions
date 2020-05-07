@@ -1,12 +1,12 @@
 <% provide(:title, 'Profile') %>
 
-<div class="profile-container container">
-  <div class="card">
-    <img src="" alt="" class="card-img-top">
-    <h5 class="card-title"><%= current_user.name %></h5>
+<div class="profile-container h-100">
+  <div class="text-center mb-5">
+    <img src="" alt="" class="card-img-top mt-5">
+    <h4 class="card-title"><%= current_user.name %></h4>
   </div>
 
-  <ul class="list-group list-flush">
+  <ul class="">
     <li class="list-group-item"><%= link_to 'All my transactions', transactions_path %></li>
     <li class="list-group-item"><%= link_to 'All my external transactions', transactions_no_grp_path %></li>
     <li class="list-group-item"><%= link_to 'All groups', groups_path %></li>

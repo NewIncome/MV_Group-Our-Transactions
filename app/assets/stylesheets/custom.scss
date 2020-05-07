@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
 
-//base color: hsl(212, 56%, 49%)
+//base color: hsl(212, 56%, 49%)  or #3778c2
 body {
-  background: linear-gradient(45deg, hsl(212, 56%, 54%), hsl(212, 56%, 44%));
+  background: linear-gradient(45deg, hsl(212, 66%, 54%), hsl(212, 56%, 44%));
   background-repeat: no-repeat;
 }
 
@@ -42,7 +42,16 @@ body {
 
 //User Profile
 .profile-container {
-  background: linear-gradient(45deg, hsl(212, 56%, 54%), hsl(212, 56%, 44%));
+  background: linear-gradient(40deg, hsl(208, 76%, 54%), #163150);
+  color: #fafafa;
+  li {
+    background-color: transparent;
+    border-width: 0 0 1px;
+
+    a {
+      color: #fafafa;
+    }
+  }
 }
 
 //Transactions
