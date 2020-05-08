@@ -1,23 +1,32 @@
-<div class="card mb-3 mx-3">
-  <div class="d-flex p-3 justify-content-between">
-    <h5 class="text-muted m-0">
-      <%= link_to "#{transaction.name}", transaction_url(transaction.id),
-                    class: "text-decoration-none" %>
-    </h5>  
-    <p class="font-weight-bold m-0">
-      $<%= number_with_precision(transaction.amount, :precision => 2) %>
-    </p>
-  </div>
-
-  <div class="d-flex">
-    <p class="ml-3">
-      <small class="text-muted">
-        <%= transaction.created_at.strftime('%d %b %Y') %>
-      </small>
-    </p>
-
-    <% if controller_name == 'groups' && action_name == 'show' %>
-      <p class="text-muted font-weight-bold ml-5"><%= transaction.user.name %>'s</p>
+<div class="card mb-3 mx-3 d-flex flex-row">
+  <div class="img-frame border border-warning rounded my-auto ml-2">
+    <% if transaction.group %>
+      <img src="<%= transaction.group.icon %>" alt="" class="">
+    <% else %>
+      <small class="text-light d-block text-center mt-5 font-weight-bold">no group</small>
     <% end %>
   </div>
-</div>
+  <div class="right-content flex-grow-1">
+    <div class="top-content d-flex p-3 justify-content-between">
+      <h5 class="text-muted m-0">
+        <%= link_to "#{transaction.name}", transaction_url(transaction.id),
+                      class: "text-decoration-none" %>
+      </h5>
+      <p class="font-weight-bold m-0">
+        $<%= number_with_precision(transaction.amount, :precision => 2) %>
+      </p>
+    </div>
+
+    <div class="btm-content d-flex justify-content-between">
+      <p class="ml-3">
+        <small class="text-muted">
+          <%= transaction.created_at.strftime('%d %b %Y') %>
+        </small>
+      </p>
+
+      <% if controller_name == 'groups' && action_name == 'show' %>
+        <p class="text-muted font-weight-bold mr-3"><%= transaction.user.name %>'s</p>
+      <% end %>
+    </div>
+  </div>
+  </div>

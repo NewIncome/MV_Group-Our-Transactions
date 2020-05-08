@@ -11,6 +11,9 @@ body {
   height: 90vh;
   padding: 0;
   width: 660px;
+  #subcontainer {
+    height: calc(100% - 56px);
+  }
 }
 
 .home_title {
@@ -59,4 +62,15 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   margin-top: -16px;
+}
+//icons
+.img-frame,
+img {
+  height: 80px;
+  width: 80px !important;
+}
+
+.l  g-img {
+  height: 100px;
+  width: 100px !important;
 }

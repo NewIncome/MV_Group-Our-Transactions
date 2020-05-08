@@ -1,5 +1,9 @@
-<div class="card mb-3 mx-3 d-flex flex-row p-3 justify-content-between">
-  <%= link_to "#{group.name}", group_url(group.id),
-                class: "text-decoration-none h4 m-0 p-3" %>
-  <p class="m-0 pr-2 align-self-center"><small class="text-muted"><%= group.created_at.strftime('%d %b %Y') %></small></p>
-</div>
+ <%= link_to(group_url(group.id), class: "text-decoration-none") do %>
+  <div class="card mb-3 mx-3 d-flex flex-row p-3 justify-content-between">
+    <img src="<%= group.icon %>" alt="" class="border border-warning rounded">
+    <p class="text-decoration-none h4 m-0 align-self-center"><%= group.name %></p>
+    <%#= link_to "#{group.name}", group_url(group.id),
+                  class: "text-decoration-none h4 m-0 align-self-center" %>
+    <p class="m-0 pr-2 align-self-center"><small class="text-muted"><%= group.created_at.strftime('%d %b %Y') %></small></p>
+  </div>
+<% end %>

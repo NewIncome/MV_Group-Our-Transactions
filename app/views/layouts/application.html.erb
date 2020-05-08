@@ -15,17 +15,17 @@
       <% if yield(:title) != 'Home' %>
         <%= render  "layouts/header" %>
       <% end %>
-   
-      <%= yield %>
+      <div class="container px-0 pt-3 overflow-auto" id="subcontainer">
 
-      <% flash.each do |m_type, msg| %>
-        <div class="alert alert-<%= m_type %> w-75 mx-auto text-center mt-3">
-          <%= msg %>
-        </div>
-      <% end %>
+        <%= yield %>
 
-      <%#= debug(params) if Rails.env.development? %>
+        <% flash.each do |m_type, msg| %>
+          <div class="alert alert-<%= m_type %> w-75 mx-auto text-center mt-3">
+            <%= msg %>
+          </div>
+        <% end %>
       
+      </div>
     </div>
     <% unless current_user.nil? %>
       <%= link_to  "Logout", logout_url, method: :delete, class: "btn btn-warning" %>
