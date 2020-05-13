@@ -1,3 +1,25 @@
 // Place all the styles related to the groups controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.grp-sel {
+  margin-left: 12px !important;
+}
+
+.icon-select {
+  background-color: #fff;
+  &:hover{ border: 1px solid #ced4da; }
+  border-radius: 0.25rem;
+  li {
+    width: 20%;
+    background-color: #fff;
+    input {
+      display: none;
+      &:checked + label {
+        background-color: #dae0e5;
+      }
+    }
+  }
+}
+
+.grp-img { filter: blur(4px) opacity(25%); }

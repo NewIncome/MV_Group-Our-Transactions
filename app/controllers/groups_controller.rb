@@ -1,8 +1,10 @@
 class GroupsController < ApplicationController
+  include GroupsHelper
   before_action :logged_in_user, only: %i[new create index show]
 
   def new
     @group = Group.new
+    @icons = icons
   end
 
   def create

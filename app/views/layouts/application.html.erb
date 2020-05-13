@@ -15,7 +15,12 @@
       <% if yield(:title) != 'Home' %>
         <%= render  "layouts/header" %>
       <% end %>
-      <div class="container px-0 pt-3 overflow-auto" id="subcontainer">
+
+      <% unless controller_name == 'users' && action_name == 'show' %>
+        <div class="container px-0 pt-3 overflow-auto" id="subcontainer">
+      <% else %>
+        <div class="container px-0 overflow-auto" id="subcontainer">
+      <% end %>
 
         <%= yield %>
 

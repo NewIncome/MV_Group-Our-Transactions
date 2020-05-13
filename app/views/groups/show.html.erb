@@ -1,8 +1,9 @@
 <% provide(:title, 'Group Details') %>
 
 <ul class="card mx-3 list-group list-group-flush p-3">
-  <li class="list-group-item p-0">
+  <li class="list-group-item p-0 d-flex justify-content-between">
     <h4 class="mt-2 mb-4"><%= @group.name %></h4>
+    <img src="<%= @group.icon %>" alt="" class="grp-img mb-2 border border-warning rounded">
   </li>
 
   <li class="list-group-item p-0 pt-3">
