@@ -4,16 +4,8 @@
 
   <%= f.text_field :name, class: "form-control mb-3", placeholder: "Name" %>
 
-  <%# icon string pending %>
-  <%#= collection_select(:transaction, :group_id, Group.all, :id, :name, { :prompt => 'Group' }, class: "form-control my-3" ) %>
-  <%#= testing collection_select(:icon, :_id, Group.all, :id, :name, { :prompt => 'Group' }, class: "form-control my-3" ) %>
-  <%# <select class="form-control my-3" name="transaction[group_id]"
-                id="transaction_group_id">
-        <option value="">Group</option>
-        <option value="1">Automotive</option> %>
-
   <ul class="icon-select btn-group flex-wrap p-0">
-    <p class="grp-sel text-muted w-100">Group</p>
+    <p class="grp-sel text-muted w-100 mt-1">Group</p>
     <% 1.upto(15) do |i| %>
       <li class="btn btn-light p-0 m-1">
         <%= f.radio_button :icon, @icons[i]['link'] %>

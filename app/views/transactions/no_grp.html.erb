@@ -1,8 +1,15 @@
 <% provide(:title, 'No Group Transactions') %>
 
-<div class="card mb-3 p-3 flex-row justify-content-between border-top-0" id="trn-total">
-  <h5 class="text-muted m-0">Total Amount</h5>
-  <p class="font-weight-bold m-0">$<%= number_with_precision(@transactions.sum(:amount), :precision => 2) %></p>
+<div>
+  <div class="card mb-3 p-3 flex-row justify-content-between border-top-0" id="trn-total">
+    <h5 class="text-muted m-0">Total Amount</h5>
+    <p class="font-weight-bold m-0">$<%= number_with_precision(@transactions.sum(:amount), :precision => 2) %></p>
+  </div>
+
+  <%= render @transactions %>
 </div>
 
-<%= render @transactions %>
+<%= link_to new_transaction_path, class: "link-btn btn
+                    btn-success w-100 p-4 rounded-0" do %>
+  <span class="p-3 border border-light">NEW TRANSACTION</span>
+<% end %>

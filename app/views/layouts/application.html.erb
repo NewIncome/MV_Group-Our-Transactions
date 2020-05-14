@@ -17,23 +17,23 @@
       <% end %>
 
       <% unless controller_name == 'users' && action_name == 'show' %>
-        <div class="container px-0 pt-3 overflow-auto" id="subcontainer">
+        <div class="container px-0 pt-3 overflow-auto d-flex
+              flex-column justify-content-between" id="subcontainer">
       <% else %>
         <div class="container px-0 overflow-auto" id="subcontainer">
       <% end %>
 
         <%= yield %>
 
-        <% flash.each do |m_type, msg| %>
-          <div class="alert alert-<%= m_type %> w-75 mx-auto text-center mt-3">
-            <%= msg %>
-          </div>
+        <% unless controller_name == 'users' && action_name == 'show' %>
+          <% flash.each do |m_type, msg| %>
+            <div class="alert alert-<%= m_type %> w-75 mx-auto text-center mt-3">
+              <%= msg %>
+            </div>
+          <% end %>
         <% end %>
       
       </div>
     </div>
-    <% unless current_user.nil? %>
-      <%= link_to  "Logout", logout_url, method: :delete, class: "btn btn-warning" %>
-    <% end %>
   </body>
 </html>

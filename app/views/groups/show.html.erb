@@ -15,3 +15,8 @@
     <span class="font-weight-bold">$<%= number_with_precision(@transactions.sum(:amount), :precision => 2) %></span>
   </li>
 </ul>
+
+<%= link_to new_group_path, class: "link-btn btn
+                  btn-success w-100 p-4 rounded-0" do %>
+  <span class="p-3 border border-light">NEW GROUP</span>
+<% end %>

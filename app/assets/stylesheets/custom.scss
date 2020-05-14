@@ -43,6 +43,11 @@ body {
   }
 }
 
+// All bottom buttons
+.link-btn {
+  display: inline-grid !important;
+}
+
 //User Profile
 .profile-container {
   background: linear-gradient(40deg, hsl(208, 76%, 54%), #163150);

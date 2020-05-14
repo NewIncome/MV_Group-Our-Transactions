@@ -12,4 +12,10 @@
     <li class="list-group-item"><%= link_to 'All groups', groups_path %></li>
     <li class="list-group-item"><%= link_to  "Logout", logout_url, method: :delete %></li>
   </ul>
+
+  <% flash.each do |m_type, msg| %>
+    <div class="alert alert-<%= m_type %> w-75 mx-auto text-center mt-3">
+      <%= msg %>
+    </div>
+  <% end %>
 </div>
