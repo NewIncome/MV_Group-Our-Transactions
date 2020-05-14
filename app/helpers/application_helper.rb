@@ -8,15 +8,12 @@ module ApplicationHelper
   end
 
   def logged_in_user
-    unless logged_in?
-      flash[:danger] = 'Please login or signup to have access'
-      redirect_to root_path
-    end
+    return if logged_in?
+    flash[:danger] = 'Please login or signup to have access'
+    redirect_to root_path
   end
 
   def already_in
-    if logged_in?
-      redirect_to current_user
-    end
+    redirect_to current_user if logged_in?
   end
 end

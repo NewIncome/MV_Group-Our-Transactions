@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: [:show, :logout]
-  before_action :already_in, only: [:new, :login]
+  before_action :logged_in_user, only: %i[show logout]
+  before_action :already_in, only: %i[new login]
 
   def new
     @user = User.new
@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   end
 
   def show; end
-  
+
   # basic User Session methods
   def login; end
 
