@@ -17,7 +17,7 @@ class TransactionsController < ApplicationController
   end
 
   def show
-    @transaction = Transaction.includes(:transactions).find_by(id: params[:id])
+    @transaction = Transaction.find_by(id: params[:id])
   end
 
   def index
