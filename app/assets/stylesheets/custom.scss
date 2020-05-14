@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 //base color: hsl(212, 56%, 49%)  or #3778c2
 body {
@@ -13,6 +14,7 @@ body {
   width: 660px;
   #subcontainer {
     height: calc(100% - 56px);
+    font-family: 'Roboto', sans-serif;
   }
 }
 

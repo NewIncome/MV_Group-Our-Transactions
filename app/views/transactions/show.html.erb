@@ -7,7 +7,7 @@
         <img src="<%= @transaction.group.icon %>" alt="" class="border border-warning rounded">
       <% else %>
         <div class="img-frame border border-warning rounded my-auto ml-2">
-          <small class="text-light d-block text-center mt-5 font-weight-bold">no group</small>
+          <small class="text-muted d-block text-center mt-5 font-weight-bold">no group</small>
         </div>
       <% end %>
       <h4 class="my-auto pl-3"><%= @transaction.name %></h4>
@@ -25,6 +25,12 @@
     <span class="font-weight-bold">$<%= number_with_precision(@transaction.amount, :precision => 2) %></span>
   </li>
 </ul>
+
+<% flash.each do |m_type, msg| %>
+  <div class="alert alert-<%= m_type %> w-75 mx-auto text-center mt-3">
+    <%= msg %>
+  </div>
+<% end %>
 
 <%= link_to new_transaction_path, class: "link-btn btn
                   btn-success w-100 p-4 rounded-0" do %>

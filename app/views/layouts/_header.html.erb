@@ -6,8 +6,7 @@
     </button>
   <% end %>
 
-  <%# dropdown setup (2 divs) %>
-      <%= link_to 'New Grp', new_group_path, class: "nav-item btn btn-outline-light" %>
-      <%= link_to 'New Trn', new_transaction_path, class: "nav-item btn btn-outline-light" %>
+  <h4 class="nav-item text-light mb-0 mr-5"><%= yield(:title).upcase %></h4>
 
+  <div class="nav-item"></div>
 </nav>

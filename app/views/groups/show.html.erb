@@ -16,6 +16,12 @@
   </li>
 </ul>
 
+  <% flash.each do |m_type, msg| %>
+    <div class="alert alert-<%= m_type %> w-75 mx-auto text-center mt-3">
+      <%= msg %>
+    </div>
+  <% end %>
+
 <%= link_to new_group_path, class: "link-btn btn
                   btn-success w-100 p-4 rounded-0" do %>
   <span class="p-3 border border-light">NEW GROUP</span>
