@@ -13,4 +13,8 @@ module ApplicationHelper
       redirect_to root_path
     end
   end
+
+  def already_in
+      redirect_to current_user if logged_in?
+  end
 end
