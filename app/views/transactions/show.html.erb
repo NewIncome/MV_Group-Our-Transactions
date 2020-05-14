@@ -3,7 +3,13 @@
 <ul class="card mx-3 list-group list-group-flush p-3">
   <li class="list-group-item p-0">
     <div class="mt-2 mb-4 d-flex">
-      <img src="<%= @transaction.group.icon %>" alt="" class="border border-warning rounded">
+      <% if @transaction.group %>
+        <img src="<%= @transaction.group.icon %>" alt="" class="border border-warning rounded">
+      <% else %>
+        <div class="img-frame border border-warning rounded my-auto ml-2">
+          <small class="text-light d-block text-center mt-5 font-weight-bold">no group</small>
+        </div>
+      <% end %>
       <h4 class="my-auto pl-3"><%= @transaction.name %></h4>
     </div>
     <p class="text-muted"><%= @transaction.description %></p>

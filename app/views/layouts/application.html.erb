@@ -12,7 +12,7 @@
   <body>
     <div class="container" id="main_container">
       <%# to not show the navbar in the home page %>
-      <% if yield(:title) != 'Home' %>
+      <% unless yield(:title) == 'Home' || yield(:title) == 'Profile' %>
         <%= render  "layouts/header" %>
       <% end %>
 
@@ -20,7 +20,7 @@
         <div class="container px-0 pt-3 overflow-auto d-flex
               flex-column justify-content-between" id="subcontainer">
       <% else %>
-        <div class="container px-0 overflow-auto" id="subcontainer">
+        <div class="container px-0 overflow-auto h-100" id="subcontainer">
       <% end %>
 
         <%= yield %>
