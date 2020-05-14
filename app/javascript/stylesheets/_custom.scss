@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+//base color: hsl(212, 56%, 49%)  or #3778c2
+body {
+  background: linear-gradient(45deg, hsl(212, 66%, 54%), hsl(212, 56%, 44%));
+  background-repeat: no-repeat;
+}
+
+#main_container {
+  background-color: #fafafa;
+  height: 90vh;
+  padding: 0;
+  width: 660px;
+  #subcontainer {
+    height: calc(100% - 56px);
+    font-family: 'Roboto', sans-serif;
+  }
+}
+
+.home_title {
+  font-family: 'Cookie', cursive;
+  font-size: 3em;
+  height: 80%;
+  h1 { font-size: 1.5em; }
+}
+
+#o-form {
+  height: 70%;
+}
+
+//Form, error styling
+.error_list {
+  color: rgb(199, 0, 0);
+  font-size: 0.9em;
+}
+
+.field_with_errors {
+  input[type],
+  textarea[name] { border-color: rgb(167, 55, 53); }
+  input[type]:focus,
+  textarea[name]:focus {
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
+    box-shadow: rgba(19, 19, 19, 0.07) 0px 1px 1px inset, rgb(107, 54, 54) 0px 0px 6px;
+  }
+}
+
+// All bottom buttons
+.link-btn {
+  display: inline-grid !important;
+}
+
+//User Profile
+.profile-container {
+  background: linear-gradient(40deg, hsl(208, 76%, 54%), #163150);
+  color: #fafafa;
+  li {
+    background-color: transparent;
+    border-width: 0 0 1px;
+
+    a {
+      color: #fafafa;
+    }
+  }
+}
+
+//Transactions
+#trn-total { 
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  margin-top: -16px;
+}
+.box-hvr:hover {
+  box-shadow: #80808082 2px 2px 2px 2px;
+}
+
+//icons
+.img-frame,
+img {
+  height: 80px;
+  width: 80px !important;
+}
+
+.lg-img {
+  height: 100px;
+  width: 100px !important;
+}
