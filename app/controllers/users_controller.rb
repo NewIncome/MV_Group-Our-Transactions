@@ -24,7 +24,7 @@ class UsersController < ApplicationController
 
   def logincreate
     @user = User.find_by(name: params[:session][:name])
-    unless @user.nil?
+    if @user
       session[:user_id] = @user.id
       flash[:success] = "#{@user.name} you are logged in!"
       redirect_to @user

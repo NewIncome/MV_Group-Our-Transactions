@@ -25,7 +25,7 @@
 
         <%= yield %>
 
-        <% unless controller_name == 'users' && action_name == 'show' || action_name == 'show' %>
+        <% if action_name != 'show' %>
           <% flash.each do |m_type, msg| %>
             <div class="alert alert-<%= m_type %> w-75 mx-auto text-center mt-3">
               <%= msg %>

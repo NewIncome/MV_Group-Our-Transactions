@@ -15,6 +15,8 @@ module ApplicationHelper
   end
 
   def already_in
-      redirect_to current_user if logged_in?
+    if logged_in?
+      render current_user
+    end
   end
 end
