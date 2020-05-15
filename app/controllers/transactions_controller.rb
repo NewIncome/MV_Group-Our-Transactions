@@ -25,8 +25,7 @@ class TransactionsController < ApplicationController
   end
 
   def no_grp
-    @transactions = current_user.transactions.where('group_id IS
-    ? OR group_id IS ?', nil, 0).order('created_at DESC')
+    @transactions = current_user.transactions.where('group_id IS ? OR group_id IS ?', nil, 0).order('created_at DESC')
   end
 
   private

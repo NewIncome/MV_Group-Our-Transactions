@@ -77,7 +77,7 @@ To clone the repo:
 - [Faker](https://github.com/faker-ruby/faker)
 
 ## Live Link and Github repo
-- [Heroku LIVE Link](https://fathomless-dusk-63020.herokuapp.com/)
+- [Heroku LIVE Link](https://cryptic-shore-97676.herokuapp.com/)
 - [Github Repository](https://github.com/NewIncome/MV_Group-Our-Transactions)
 
 ## Authors and acknowledgment
