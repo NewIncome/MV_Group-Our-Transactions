@@ -10,7 +10,7 @@
     <div class="input-group-prepend">
       <div class="input-group-text">$</div>
     </div>
-    <%= f.number_field :amount, class: "form-control", placeholder: "Amount" %>
+    <%= f.number_field :amount, class: "form-control", placeholder: "Amount", min: "0", step: "0.01" %>
   </div>
 
   <%= collection_select(:transaction, :group_id, Group.all, :id, :name, { :prompt => 'Group' }, class: "form-control my-3" ) %>
