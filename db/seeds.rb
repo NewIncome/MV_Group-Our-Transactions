@@ -25,11 +25,13 @@ end
 
 # create 30 transactions
 30.times do
+  rnum = rand(10)
+  num_nil = rnum==0 ? nil : rnum
   Transaction.create(
     name:         Faker::Commerce.product_name,
     description:  Faker::Lorem.paragraph(sentence_count: 4),
     amount:       Faker::Commerce.price,
     user_id:      1 + Random.rand(6),
-    group_id:     rand(10)
+    group_id:     num_nil
   )
 end
