@@ -11,9 +11,9 @@ body {
 
 #main_container {
   background-color: #fafafa;
-  height: 90vh;
+  height: 100vh;
   padding: 0;
-  width: 660px;
+  max-width: 660px !important;
   #subcontainer {
     height: calc(100% - 56px);
     font-family: 'Roboto', sans-serif;

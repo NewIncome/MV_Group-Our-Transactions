@@ -12,7 +12,7 @@
   </head>
 
   <body>
-    <div class="container" id="main_container">
+    <div class="container w-100" id="main_container">
       <%# to not show the navbar in the home page %>
       <% unless yield(:title) == 'Home' || yield(:title) == 'Profile' %>
         <%= render  "layouts/header" %>
