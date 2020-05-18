@@ -10,19 +10,3 @@ Rails.application.routes.draw do
   resources :transactions, only: [:index, :show, :new, :create]
   root 'static_pages#home'
 end
-
-# ROUTES:
-#               root GET     /                               users#login
-#             signup GET     /signup(.:format)               users#new
-#              users POST    /users(.:format)                users#create
-#               user GET     /users/:id(.:format)            users#show
-#             groups GET     /groups(.:format)               groups#index
-#                    POST    /groups(.:format)               groups#create
-#          new_group GET     /groups/new(.:format)           groups#new
-#              group GET     /groups/:id(.:format)           groups#show
-#       transactions GET     /transactions(.:format)         transactions#index
-#                    POST    /transactions(.:format)         transactions#create
-#        transaction GET     /transactions/new(.:format)     transactions#new
-#        transaction GET     /transactions/:id(.:format)     transactions#show
-#transactions_no_grp GET     /transactions/no-grp(.:format)  transactions#no_grp
-#               root GET     /                               static_pages#home

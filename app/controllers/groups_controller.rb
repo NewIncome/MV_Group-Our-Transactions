@@ -3,8 +3,8 @@ class GroupsController < ApplicationController
   before_action :logged_in_user, only: %i[new create index show]
 
   def new
-    @group = Group.new
     @icons = icons
+    @group = Group.new
   end
 
   def create
@@ -13,6 +13,7 @@ class GroupsController < ApplicationController
       flash[:success] = "'#{@group.name}' group created successfully!"
       redirect_to @group
     else
+      @icons = icons
       render 'new'
     end
   end
