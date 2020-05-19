@@ -21,11 +21,12 @@ class TransactionsController < ApplicationController
   end
 
   def index
-    @transactions = Transaction.where(user_id: current_user.id).order('created_at DESC')
+    @transactions = Transaction.includes(:user, :group).where(user_id: current_user.id).order('created_at DESC')
   end
 
   def no_grp
-    @transactions = current_user.transactions.where(group_id: nil).order('created_at DESC')
+    @transactions = Transaction.includes(:group, :user).where({
+                     group_id: nil, user_id: current_user.id}).order('created_at DESC')
   end
 
   private
