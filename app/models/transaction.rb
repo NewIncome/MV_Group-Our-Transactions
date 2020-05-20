@@ -7,4 +7,7 @@ class Transaction < ApplicationRecord
 
   belongs_to :user
   belongs_to :group, optional: true
+
+  scope :in_u_g, -> { includes(:user, :group) }
+  scope :dsc, -> { order('created_at DESC') }
 end

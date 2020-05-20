@@ -3,4 +3,5 @@ class Group < ApplicationRecord
                    uniqueness: true
 
   has_many :transactions
+  belongs_to :user
 end

@@ -19,12 +19,13 @@ end
 10.times do
   Group.create(
     name: Faker::Commerce.department(max:1, fixed_amount:true),
-    icon: "https://picsum.photos/id/#{Random.rand(1..100)}/100/100"
+    icon: "https://picsum.photos/id/#{Random.rand(1..100)}/100/100",
+    user_id:      1 + Random.rand(6)
   )
 end
 
-# create 30 transactions
-30.times do
+# create 50 transactions
+50.times do
   rnum = rand(10)
   num_nil = rnum==0 ? nil : rnum
   Transaction.create(
