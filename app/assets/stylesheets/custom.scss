@@ -17,6 +17,7 @@ body {
   #subcontainer {
     height: calc(100% - 56px);
     font-family: 'Roboto', sans-serif;
+    max-width: 660px !important;
   }
 }
 
@@ -27,8 +28,13 @@ body {
   h1 { font-size: 1.5em; }
 }
 
-#o-form {
-  height: 70%;
+#o-form { height: 70%; }
+
+//Header Nav
+.navbar {
+  min-height: 56px;
+  .burguer { position: fixed; }
+  .title { max-width: 65%; }
 }
 
 //Form, error styling
@@ -48,38 +54,13 @@ body {
 }
 
 // All bottom buttons
-.link-btn {
-  display: inline-grid !important;
-}
-
-//User Profile
-.profile-container {
-  background: linear-gradient(40deg, hsl(208, 76%, 54%), #163150);
-  color: #fafafa;
-  li {
-    background-color: transparent;
-    border-width: 0 0 1px;
-
-    a {
-      color: #fafafa;
-    }
-  }
-}
-
-//Transactions
-#trn-total { 
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  margin-top: -16px;
-}
-.box-hvr:hover {
-  box-shadow: #80808082 2px 2px 2px 2px;
-}
+.link-btn { display: inline-grid !important; }
 
 //icons
 .img-frame,
 img {
   height: 80px;
+  min-width: 80px;
   width: 80px !important;
 }
 

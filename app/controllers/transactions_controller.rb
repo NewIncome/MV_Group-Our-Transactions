@@ -25,7 +25,7 @@ class TransactionsController < ApplicationController
   end
 
   def no_grp
-    @transactions = Transaction.in_u_g.where({ group_id: nil, user_id: current_user.id}).dsc
+    @transactions = Transaction.in_u_g.where({ group_id: nil, user_id: current_user.id }).dsc
   end
 
   private

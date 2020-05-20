@@ -2,9 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.grp-sel {
-  margin-left: 12px !important;
-}
+.grp-sel { margin-left: 12px !important; }
 
 .icon-select {
   background-color: #fff;
@@ -23,3 +21,5 @@
 }
 
 .grp-img { filter: blur(4px) opacity(25%); }
+
+.date { min-width: 52px; }

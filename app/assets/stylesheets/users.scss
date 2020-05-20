@@ -1,0 +1,12 @@
+//User Profile
+
+.profile-container {
+  background: linear-gradient(40deg, hsl(208, 76%, 54%), #163150);
+  color: #fafafa;
+  li {
+    background-color: transparent;
+    border-width: 0 0 1px;
+
+    a { color: #fafafa; }
+  }
+}
