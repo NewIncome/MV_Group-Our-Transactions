@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Users", type: :feature do  
+RSpec.feature "UserFeatures", type: :feature do  
   context 'not logged in' do
     it 'can load a login page' do
       visit login_path

@@ -105,3 +105,17 @@ def log_in
   fill_in 'Name', with: 'User01'
   click_button 'Log in'
 end
+
+def new_group
+  visit new_group_path
+  fill_in 'Name', with: 'Group01'
+  click_button 'Create Group'
+end
+
+def new_transaction
+  visit new_transaction_path
+  fill_in 'Name', with: 'Transaction01'
+  fill_in 'Description', with: 'Transaction #01 description'
+  fill_in 'Amount', with: '10.50'
+  click_button 'Create Transaction'
+end
