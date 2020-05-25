@@ -94,3 +94,14 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 end
+
+def create_user
+  user1 = User.create(name: 'User01')
+end
+
+def log_in
+  create_user
+  visit login_path
+  fill_in 'Name', with: 'User01'
+  click_button 'Log in'
+end
