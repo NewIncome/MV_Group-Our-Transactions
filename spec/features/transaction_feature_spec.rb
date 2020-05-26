@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "TransactionFeatures", type: :feature do
+RSpec.feature 'TransactionFeatures', type: :feature do
   before do
     log_in
   end

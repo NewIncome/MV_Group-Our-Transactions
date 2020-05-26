@@ -11,7 +11,7 @@ RSpec.describe Group, type: :model do
     end
 
     # 1st test
-    it 'creates a new group' do    
+    it 'creates a new group' do
       @group1.save
       expect(@group1.valid?).to eq(true)
     end
@@ -33,7 +33,7 @@ RSpec.describe Group, type: :model do
     # 4th test
     it 'creates a group only if the name is unique' do
       @group1.save
-      @group2 = Group.create(name: "#{@group1.name}")
+      @group2 = Group.create(name: @group1.name.to_s)
       expect(@group2.valid?).to eq false
     end
 
@@ -44,7 +44,7 @@ RSpec.describe Group, type: :model do
     end
 
     # 6th test
-    it "has to belong to a user" do
+    it 'has to belong to a user' do
       @group1.user_id = nil
       @group1.save
       expect(@group1.valid?).to eq false

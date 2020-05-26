@@ -6,7 +6,7 @@ RSpec.describe User, type: :model do
   end
 
   # 1st test
-  it 'can create a new user' do    
+  it 'can create a new user' do
     @user1.save
     expect(@user1.valid?).to eq(true)
   end
@@ -28,7 +28,7 @@ RSpec.describe User, type: :model do
   # 4th test
   it 'creates a user only if the name is unique' do
     @user1.save
-    @user2 = User.create(name: "#{@user1.name}")
+    @user2 = User.create(name: @user1.name.to_s)
     expect(@user2.valid?).to eq false
   end
 

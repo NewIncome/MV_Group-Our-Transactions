@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "GroupFeatures", type: :feature do
+RSpec.feature 'GroupFeatures', type: :feature do
   before do
     log_in
   end
