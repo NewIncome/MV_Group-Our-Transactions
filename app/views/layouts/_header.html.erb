@@ -1,0 +1,17 @@
+<nav class="navbar navbar-dark bg-primary">
+  <%# right-side burguer icon %>
+  <% unless logged_in? %>
+    <a href="/">
+  <% else %>
+    <a href="/users/<%= current_user.id %>" class="burguer">
+    <%#= link_to current_user do %>
+  <% end %>
+    <button class="navbar-toggler">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </a>
+
+  <h4 class="title nav-item text-light mb-0 mx-auto text-center"><%= yield(:title).upcase %></h4>
+
+  <div class="nav-item"></div>
+</nav>

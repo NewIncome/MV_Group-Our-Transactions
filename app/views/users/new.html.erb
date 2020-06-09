@@ -1,0 +1,11 @@
+<% provide(:title, 'Signup') %>
+
+<%= form_for @user, html: { class: "mt-5 mx-3" } do |f| %>
+
+  <%= f.text_field :name, class: "form-control", placeholder: "Name" %>
+  
+  <%= f.submit class: "btn btn-primary my-4 mx-auto d-block" %>
+  
+  <%= render  partial: 'shared/form_errors', locals: { model: @user } %>
+  
+<% end %>

@@ -1,0 +1,29 @@
+<% provide(:title, 'New Group') %>
+
+<%= form_for @group, html: { class: "mt-5 mx-3" } do |f| %>
+
+  <%= f.text_field :name, class: "form-control mb-3", placeholder: "Name" %>
+
+  <ul class="icon-select btn-group flex-wrap p-0">
+    <p class="grp-sel text-muted w-100 mt-1">Group</p>
+      <li class="btn btn-light p-0 m-1">
+        <%= f.radio_button :icon, @icons[25]['link'] %>
+        <%= f.label :icon, value: @icons[25]['link'], class: "w-100 h-100 py-2" do %>
+          <img src="<%= @icons[25]['link']%>" alt="">
+        <% end %>
+      </li>
+    <% 1.upto(15) do |i| %>
+      <li class="btn btn-light p-0 m-1">
+        <%= f.radio_button :icon, @icons[i]['link'] %>
+        <%= f.label :icon, value: @icons[i]['link'], class: "w-100 h-100 py-2" do %>
+          <img src="<%= @icons[i]['link']%>" alt="">
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+
+  <%= f.submit class: "btn btn-primary my-4 mx-auto d-block" %>
+
+  <%= render  partial: 'shared/form_errors', locals: { model: @group } %>
+
+<% end %>

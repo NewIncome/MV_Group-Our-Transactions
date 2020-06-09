@@ -1,0 +1,10 @@
+<% if model && model.errors.any? %>
+  <p class="alert alert-danger text-muted w-75 mx-auto">
+    The form contains <%= pluralize(model.errors.count, ' error') %>
+  </p>
+  <ul class="error_list mx-auto w-75 mx-auto">
+    <% model.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>

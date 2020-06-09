@@ -1,0 +1,11 @@
+<% provide(:title, 'Login') %>
+
+<div class="d-flex flex-column h-75 justify-content-between mt-5 mx-3">
+  <%= form_with scope: :session, url: login_path, html: { class: "" } do |f| %>
+
+    <%= f.text_field :name, class: "form-control", placeholder: "Name" %>
+
+    <%= f.submit 'Log in', class: "btn btn-primary my-4 mx-auto d-block" %>
+  <% end %>
+  <p class="">New user? <%= link_to  'Sign up now!', signup_path %></p>
+</div>

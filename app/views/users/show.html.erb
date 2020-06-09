@@ -1,0 +1,21 @@
+<% provide(:title, 'Profile') %>
+
+<div class="profile-container h-100">
+  <div class="text-center mb-5">
+    <img src="<%= current_user.icon %>" alt="" class="lg-img card-img-top mt-5 border border-secondary rounded rounded-circle">
+    <h4 class="card-title"><%= current_user.name %></h4>
+  </div>
+
+  <ul class="">
+    <li class="list-group-item"><%= link_to 'All my transactions', transactions_path %></li>
+    <li class="list-group-item"><%= link_to 'All my external transactions', transactions_no_grp_path %></li>
+    <li class="list-group-item"><%= link_to 'All groups', groups_path %></li>
+    <li class="list-group-item"><%= link_to  "Logout", logout_url, method: :delete %></li>
+  </ul>
+
+  <% flash.each do |m_type, msg| %>
+    <div class="alert alert-<%= m_type %> w-75 mx-auto text-center mt-3">
+      <%= msg %>
+    </div>
+  <% end %>
+</div>

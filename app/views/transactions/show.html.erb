@@ -1,0 +1,38 @@
+<% provide(:title, 'Details') %>
+
+<ul class="card mx-3 list-group list-group-flush p-3">
+  <li class="list-group-item p-0">
+    <div class="mt-2 mb-4 d-flex">
+      <% if @transaction.group %>
+        <img src="<%= @transaction.group.icon %>" alt="" class="border border-warning rounded">
+      <% else %>
+        <div class="img-frame border border-warning rounded my-auto ml-2">
+          <small class="text-muted d-block text-center mt-5 font-weight-bold">no group</small>
+        </div>
+      <% end %>
+      <h4 class="my-auto pl-3"><%= @transaction.name %></h4>
+    </div>
+    <p class="text-muted"><%= @transaction.description %></p>
+  </li>
+
+  <li class="list-group-item p-0 pt-3 d-flex justify-content-between">
+    <p class="">Transaction no.<%= @transaction.id %></p>
+    <p class=""><small class="text-muted"><%= @transaction.created_at.strftime('%d %b %Y at %l:%M%P') %></small></p>
+  </li>
+
+  <li class="list-group-item d-flex justify-content-between p-0 pt-3">
+    <p class="m-0">AMOUNT</p>
+    <span class="font-weight-bold">$<%= number_with_precision(@transaction.amount, :precision => 2) %></span>
+  </li>
+</ul>
+
+<% flash.each do |m_type, msg| %>
+  <div class="alert alert-<%= m_type %> w-75 mx-auto text-center mt-3">
+    <%= msg %>
+  </div>
+<% end %>
+
+<%= link_to new_transaction_path, class: "link-btn btn
+                  btn-success w-100 p-4 rounded-0" do %>
+  <span class="p-3 border border-light">NEW TRANSACTION</span>
+<% end %>

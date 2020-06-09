@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MVGOT</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="container w-100" id="main_container">
+      <%# to not show the navbar in the home page %>
+      <% unless yield(:title) == 'Home' || yield(:title) == 'Profile' %>
+        <%= render  "layouts/header" %>
+      <% end %>
+
+      <% unless controller_name == 'users' && action_name == 'show' %>
+        <div class="pt-3 overflow-auto d-flex flex-column
+                      justify-content-between" id="subcontainer">
+      <% else %>
+        <div class="container px-0 overflow-auto h-100" id="subcontainer">
+      <% end %>
+
+        <%= yield %>
+
+        <% if action_name != 'show' %>
+          <% flash.each do |m_type, msg| %>
+            <div class="alert alert-<%= m_type %> w-75 mx-auto text-center mt-3">
+              <%= msg %>
+            </div>
+          <% end %>
+        <% end %>
+      
+      </div>
+    </div>
+  </body>
+</html>

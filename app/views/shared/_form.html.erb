@@ -1,0 +1,26 @@
+<% if :title == 'Login' %>
+  <%= form_with scope: :session, url: login_path do |f| %>
+<% end %>
+
+  <%= render  'shared/form_errors' %>
+
+  <%= f.label :name, 'Name' %>
+  <%= f.text_field :name, class: "form-control" %>
+
+  <% if @group %>
+    <%= f.label :icon, "Icon" %>
+    <%= f.text_field :icon %>
+  <% elsif @transaction %>
+    <%= f.label :description %>
+    <%= f.text_area :description, class: "" %>
+
+    <%= f.label :amount %>
+    <%# <%= f.number_field (:amount, in: ${0.0..20.0}, step: ${0.5}) %>
+
+    <%= f.label :group_id %>
+    <%# <%= f.number_field (:group_id, in: 1..Group.last.id, step: ${0.5}) %>
+
+    <%= f.hidden_field :user_id, value: @user.id %>
+  <% end %>
+
+<% end %>
