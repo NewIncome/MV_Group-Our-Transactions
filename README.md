@@ -90,4 +90,4 @@ Author | Social Media
 :--------------:|:------------:
 👤 | - Github: [@NewIncome](https://github.com/NewIncome)
 **Alfredo C.** | - Twitter: [@J_A_fredo](https://twitter.com/J_A_fredo)
-. | - Linkedin: [Alfredo C.](https://www.linkedin.com/in/alfredo-cardenas-62b021183 )
+. | - Linkedin: [Alfredo C.](www.linkedin.com/in/j-alfredo-c)
