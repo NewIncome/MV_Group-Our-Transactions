@@ -8,7 +8,7 @@ class GroupsController < ApplicationController
   end
 
   def create
-    @group = current_user.groups.build(group_params)
+    @group = @user.groups.build(group_params)
     if @group.save
       flash[:success] = "'#{@group.name}' group created successfully!"
       redirect_to @group
@@ -30,6 +30,6 @@ class GroupsController < ApplicationController
   private
 
   def group_params
-    params.require(:group).permit(:name, :icon, :user)
+    params.require(:group).permit(:name, :icon)
   end
 end
