@@ -20,19 +20,19 @@ end
   Group.create(
     name: Faker::Commerce.department(max:1, fixed_amount:true),
     icon: "https://picsum.photos/id/#{Random.rand(1..100)}/100/100",
-    user_id:      1 + Random.rand(6)
+    user_id:      1 + Random.rand(User.all.size)
   )
 end
 
 # create 50 transactions
 50.times do
-  rnum = rand(10)
+  rnum = rand(Group.all.size) + 1
   num_nil = rnum==0 ? nil : rnum
   Transaction.create(
     name:         Faker::Commerce.product_name,
     description:  Faker::Lorem.paragraph(sentence_count: 4),
     amount:       Faker::Commerce.price,
-    user_id:      1 + Random.rand(6),
+    user_id:      1 + Random.rand(5),
     group_id:     num_nil
   )
 end
