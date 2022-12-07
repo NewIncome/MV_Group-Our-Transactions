@@ -24,7 +24,7 @@ test:
 
 production:
   <<: *default
-  url: <%= ENV['GP_OUR_TR_DATABASE_URL'] %>
+  url: <%= ENV['DATABASE_URL'] %>
   database: mv_group_our_transactions_production
   user: gp-our-tr
   password: <%= ENV['GP_OUR_TR_DB_PASSWORD'] %>
