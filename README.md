@@ -77,7 +77,7 @@ To clone the repo:
 - [Faker](https://github.com/faker-ruby/faker)
 
 ## Live Link and Github repo
-- [Heroku LIVE Link](https://grouptrans-01.herokuapp.com/)
+- [Heroku LIVE Link](https://group-our-transactions.onrender.com)
 - [Github Repository](https://github.com/NewIncome/MV_Group-Our-Transactions)
 
 ## Authors and acknowledgment
