@@ -40,6 +40,8 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'rails-controller-testing' # Assert_template capabilities # non-H&S
   gem 'rspec-rails', '~>4.0.0' # Run against latest stable release
+  gem 'pry'
+  gem 'pry-byebug'
 end
 
 group :development do
