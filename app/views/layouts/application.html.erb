@@ -30,16 +30,8 @@
         <div class="container px-0 overflow-auto h-100" id="subcontainer">
       <% end %>
 
-        <%= yield %>
+      <%= yield %>
 
-        <% if action_name != 'show' %>
-          <% flash.each do |m_type, msg| %>
-            <div class="alert alert-<%= m_type %> w-75 mx-auto text-center mt-3">
-              <%= msg %>
-            </div>
-          <% end %>
-        <% end %>
-      
       </div>
     </div>
   </body>

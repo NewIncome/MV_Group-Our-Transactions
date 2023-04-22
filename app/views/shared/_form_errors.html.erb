@@ -7,4 +7,10 @@
       <li><%= msg %></li>
     <% end %>
   </ul>
+<% else %>
+  <% flash.each do |m_type, msg| %>
+    <div class="alert alert-<%= m_type %> w-75 mx-auto text-center mt-3">
+      <%= msg %>
+    </div>
+  <% end %>
 <% end %>

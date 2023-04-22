@@ -1,10 +1,13 @@
 <% provide(:title, 'Login') %>
 
-<div class="d-flex flex-column h-75 justify-content-between mt-5 mx-3">
-  <%= form_with scope: :session, url: login_path, html: { class: "" } do |f| %>
+<div class="d-flex flex-column h-75 mt-5 mx-3">
+  <%= form_with scope: :session, url: login_path, local: true, html: { class: "" } do |f| %>
     <%= f.text_field :name, class: "form-control", placeholder: "Name" %>
 
-    <%= f.submit 'Log in', class: "btn btn-primary my-4 mx-auto d-block" %>
+    <%= f.submit 'Log in', class: "btn btn-primary mt-4 mb-2 mx-auto d-block" %>
   <% end %>
-  <p class="">New user? <%= link_to  'Sign up now!', signup_path %></p>
+
+  <%= render  partial: 'shared/form_errors', locals: { model: @user } %>
+
 </div>
+<p class="mx-3" style="position: absolute; top: 80%">New user? <%= link_to  'Sign up now!', signup_path %></p>
