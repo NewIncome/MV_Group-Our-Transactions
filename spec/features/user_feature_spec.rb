@@ -24,12 +24,23 @@ RSpec.feature 'UserFeatures', type: :feature do
       expect(page).to have_content 'Account created successfully!'
     end
 
-    it 'can log in a user' do
-      create_user
-      visit login_path
-      fill_in 'Name', with: 'User01'
-      click_button 'Log in'
-      expect(page).to have_content 'you are logged in!'
+    context 'login form' do
+      setup do
+        create_user
+        visit login_path
+      end
+
+      it 'can log in a user' do
+        fill_in 'Name', with: 'User01'
+        click_button 'Log in'
+        expect(page).to have_content 'you are logged in!'
+      end
+
+      it 'can display login error message' do
+        fill_in 'Name', with: 'X'
+        click_button 'Log in'
+        expect(page).to have_content "User doesn't exist, please sign up"
+      end
     end
   end
 
