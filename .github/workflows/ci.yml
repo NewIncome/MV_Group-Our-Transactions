@@ -1,0 +1,48 @@
+# This workflow will install a prebuilt Ruby version, install dependencies, and
+# run tests.
+name: "Ruby on Rails CI"
+on: push
+jobs:
+  test_rspec:
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:11-alpine
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: postgres
+        ports:
+          - 5432:5432
+        # Options for healthy development
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+      redis:
+        image: redis
+        ports: ['6379:6379']
+        options: --entrypoint redis-server
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+      - uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: install
+      - name: Build and run tests
+        env:
+          PGPASSWORD: postgres
+          DATABASE_URL: postgres://postgres:@localhost:5432/test_rspec
+          REDIS_URL: redis://localhost:6379/0
+          RAILS_ENV: test
+          RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
+        run: | # this pipe symbols is to start a multiline script 
+          sudo apt-get -yqq install libpq-dev # for postgres headers to compile the pg gem
+          gem install bundler
+          bundle install --jobs 4 --retry 3 # to help it install faster
+          bundle exec rails db:prepare # for rails >=6 or db:setup <6
+          bundle exec rails test
