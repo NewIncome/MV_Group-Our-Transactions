@@ -151,7 +151,7 @@ GEM
       byebug (~> 11.0)
       pry (>= 0.13, < 0.15)
     public_suffix (5.0.1)
-    puma (4.3.12)
+    puma (5.6.7)
       nio4r (~> 2.0)
     racc (1.6.2)
     rack (2.2.7)
@@ -293,7 +293,7 @@ DEPENDENCIES
   pg
   pry
   pry-byebug
-  puma (~> 4.3)
+  puma (~> 5.6)
   rails (~> 6.0.2, >= 6.0.2.2)
   rails-controller-testing
   rest-client
